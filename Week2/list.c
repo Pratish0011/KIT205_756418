@@ -91,3 +91,108 @@ void destroy_list(List* self) {
 	}
 	self->head = NULL;
 }
+
+
+// Unit test
+
+void list_test() {
+	List my_list = new_list();
+
+	printf("Testing insert_at_front...\n");
+
+	insert_at_front(&my_list, 5);
+	insert_at_front(&my_list, 3);
+	insert_at_front(&my_list, 7);
+	insert_at_front(&my_list, 2);
+	insert_at_front(&my_list, 0);
+
+	printf("Expected: 0, 2, 7, 3, 5\n");
+	printf("Result: ");
+	print_list(&my_list);
+
+	destroy_list(&my_list);
+}
+
+
+// Adhoc Test
+
+void list_adhoc_test() {
+	List my_list = new_list();
+	int quit = 0;
+
+	while (!quit) {
+		int option;
+
+		printf("\nMenu:\n");
+		printf("1. Insert\n");
+		printf("2. Delete\n");
+		printf("3. Print\n");
+		printf("0. Quit\n");
+		printf("Enter option: ");
+		scanf("%d", &option);
+
+		if (option == 0) {
+			quit = 1;
+		}
+		else if (option == 1) {
+			option_insert(&my_list);
+		}
+		else if (option == 2) {
+			option_delete(&my_list);
+		}
+		else if (option == 3) {
+			option_print(&my_list);
+		}
+	}
+
+	destroy_list(&my_list);
+}
+
+// Reverse function
+
+
+List reverse(List* self) {
+	List new_list_obj = new_list();
+
+	ListNodePtr current = self->head;
+	while (current != NULL) {
+		insert_at_front(&new_list_obj, current->data);
+		current = current->next;
+	}
+
+	return new_list_obj;
+}
+
+
+// Merge function
+
+
+List merge(List* list1, List* list2) {
+	List merged = new_list();
+
+	ListNodePtr p1 = list1->head;
+	ListNodePtr p2 = list2->head;
+
+	while (p1 != NULL && p2 != NULL) {
+		if (p1->data < p2->data) {
+			insert_in_order(&merged, p1->data);
+			p1 = p1->next;
+		}
+		else {
+			insert_in_order(&merged, p2->data);
+			p2 = p2->next;
+		}
+	}
+
+	while (p1 != NULL) {
+		insert_in_order(&merged, p1->data);
+		p1 = p1->next;
+	}
+
+	while (p2 != NULL) {
+		insert_in_order(&merged, p2->data);
+		p2 = p2->next;
+	}
+
+	return merged;
+}

@@ -14,7 +14,7 @@ typedef struct list {
 
 // Function to create and return a new empty list.
 List new_list();
-
+	
 // Function to print the contents of a list.
 void print_list(List* self);
 
@@ -29,3 +29,11 @@ void delete_list(List* self, int data);
 
 // Function to free the memory allocated to a list and all its nodes.
 void destroy_list(List* self);
+
+// Testing
+void list_test();
+void list_adhoc_test();
+
+// New functions
+List reverse(List* self);
+List merge(List* list1, List* list2);
