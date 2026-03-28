@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
@@ -111,6 +112,25 @@ void list_test() {
 	print_list(&my_list);
 
 	destroy_list(&my_list);
+}
+
+
+void option_insert(List* self) {
+	int value;
+	printf("Enter value to insert: ");
+	scanf_s("%d", &value);
+	insert_in_order(self, value);
+}
+
+void option_delete(List* self) {
+	int value;
+	printf("Enter value to delete: ");
+	scanf_s("%d", &value);
+	delete_list(self, value);
+}
+
+void option_print(List* self) {
+	print_list(self);
 }
 
 
