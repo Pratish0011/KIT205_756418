@@ -34,6 +34,13 @@ void destroy_list(List* self);
 void list_test();
 void list_adhoc_test();
 
+
+// Options function for adhoc  test menu
+void option_insert(List* self);
+void option_delete(List* self);
+void option_print(List* self);
+
 // New functions
 List reverse(List* self);
 List merge(List* list1, List* list2);
+
