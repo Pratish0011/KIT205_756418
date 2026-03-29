@@ -76,3 +76,5 @@ void print_post_order_bst(BST* self);
 int height_bst(BST* self);
 
 void bst_test();
+
+void bst_adhoc_test();
