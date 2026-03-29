@@ -77,7 +77,7 @@ int main() {
     int choice;
 
     printf("Enter value of n: ");
-    scanf("%ld", &n);
+    scanf("%d", &n);
 
     printf("\nChoose function:\n");
     printf("1 f1\n2 f2\n3 f3\n4 f4\n5 f5\n6 f6\n7 f7\n");
