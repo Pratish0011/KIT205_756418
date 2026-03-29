@@ -31,6 +31,10 @@ BSTNodePtr find_bst(BST* self, int n) {
 BSTNodePtr insert_bst_node(BSTNodePtr self, int n) {
 	if (self == NULL) { /* found where to put it*/
 		self = malloc(sizeof * self);
+		if (self == NULL) {
+			printf("Memory allocation failed!\n");
+			exit(1);
+		}
 		self->data_item = n;
 		self->left = self->right = NULL;
 	}
@@ -137,7 +141,10 @@ void bst_adhoc_test() {
 	int data;
 	while (quit == 0) {
 		printf("Enter some data: ");
-		scanf("%d", &data);
+		if (scanf("%d", &data) != 1) {
+			printf("Invalid input!\n");
+			break;
+		}
 		if (data != 0) {
 			insert_bst(&tree, data);
 		}
