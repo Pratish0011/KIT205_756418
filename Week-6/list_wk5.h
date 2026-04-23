@@ -5,7 +5,7 @@
 typedef char* String;
 
 typedef struct listNode {
-	int data;
+	String data;
 	struct listNode* next;
 } *ListNodePtr;
 
@@ -18,8 +18,8 @@ List new_list();
 
 void print_list(List* self);
 
-void insert_at_front(List* self, int data);
+void insert_at_front(List* self, String data);
 
-void delete_from_list(List* self, int data);
+void delete_from_list(List* self, String data);
 
 void destroy_list(List* self);
