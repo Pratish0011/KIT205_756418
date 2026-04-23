@@ -15,7 +15,7 @@ List new_list() {
 void print_list(List* self) {
 	ListNodePtr current = self->head;
 	while (current != NULL) {
-		printf("%d", current->data);
+		printf("%s", current->data);
 		current = current->next;
 
 		if (current != NULL)
@@ -30,7 +30,8 @@ void print_list(List* self) {
 // -- copy string from parameter into newNode->data (strcpy)
 void insert_at_front(List* self, int data) {
 	ListNodePtr new_node = malloc(sizeof * new_node);
-	new_node->data = data;
+	new_node->data = malloc(strlen(data) + 1);
+	strcpy(new_node->data, data);
 
 	new_node->next = self->head;
 	self->head = new_node;
@@ -39,12 +40,12 @@ void insert_at_front(List* self, int data) {
 // after changing to char*:
 // -- change test in if statement to string compare (strcmp)
 // -- free current->data (memory allocated for string) before freeing current
-void delete_from_list(List* self, int data) {
+void delete_from_list(List* self, String data) {
 	ListNodePtr current = self->head;
 	ListNodePtr prev = NULL;
 
 	while (current != NULL) {
-		if (current->data == data) {
+		if (strcmp(current->data, data) == 0) {
 			if (prev == NULL) {        // front of list
 				self->head = current->next;
 				free(current->data);
@@ -53,7 +54,7 @@ void delete_from_list(List* self, int data) {
 			}
 			else {                    // middle of list
 				prev->next = current->next;
-
+				free(current->data);
 				free(current);
 				current = prev->next;
 			}
@@ -73,7 +74,51 @@ void destroy_list(List* self) {
 		ListNodePtr to_free = current;
 
 		current = current->next;
+		free(to_free->data);
 		free(to_free);
 	}
 	self->head = NULL;
+}
+
+
+
+void list_test() {
+	List my_list = new_list();
+
+	printf("Testing insert_at_front...\n");
+	insert_at_front(&my_list, "apple");
+	insert_at_front(&my_list, "banana");
+	insert_at_front(&my_list, "cherry");
+	insert_at_front(&my_list, "date");
+	insert_at_front(&my_list, "elderberry");
+
+	printf("Expected: elderberry, date, cherry, banana, apple\n");
+	printf("Result:   ");
+	print_list(&my_list);
+
+	printf("\nTesting delete_from_list (delete 'cherry')...\n");
+	delete_from_list(&my_list, "cherry");
+	printf("Expected: elderberry, date, banana, apple\n");
+	printf("Result:   ");
+	print_list(&my_list);
+
+	printf("\nTesting delete_from_list (delete front 'elderberry')...\n");
+	delete_from_list(&my_list, "elderberry");
+	printf("Expected: date, banana, apple\n");
+	printf("Result:   ");
+	print_list(&my_list);
+
+	printf("\nTesting delete_from_list (delete end 'apple')...\n");
+	delete_from_list(&my_list, "apple");
+	printf("Expected: date, banana\n");
+	printf("Result:   ");
+	print_list(&my_list);
+
+	printf("\nTesting destroy_list...\n");
+	destroy_list(&my_list);
+	printf("Expected: (empty line)\n");
+	printf("Result:   ");
+	print_list(&my_list);
+
+	printf("\nAll tests complete.\n");
 }
