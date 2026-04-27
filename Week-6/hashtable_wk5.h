@@ -18,3 +18,5 @@ void hash_remove(HashTable* self, String key);
 void hash_print(HashTable* self);
 
 void hash_destroy(HashTable* self);
+
+void hash_adhoc_test();

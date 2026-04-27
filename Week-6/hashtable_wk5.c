@@ -1,4 +1,7 @@
-#include <stdlib.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h> 
+#include <stdlib.h>  
+#include <string.h>
 #include "hashtable_wk5.h"
 
 HashTable create_hashtable(int n) {

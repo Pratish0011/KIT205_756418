@@ -1,5 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "list_wk5.h"
 
 //TODO: change data type to char*
@@ -28,7 +30,7 @@ void print_list(List* self) {
 // -- check how long data parameter is (strlen)
 // -- allocate just enough memory for newNode->data (malloc)
 // -- copy string from parameter into newNode->data (strcpy)
-void insert_at_front(List* self, int data) {
+void insert_at_front(List* self, String data) {
 	ListNodePtr new_node = malloc(sizeof * new_node);
 	new_node->data = malloc(strlen(data) + 1);
 	strcpy(new_node->data, data);
