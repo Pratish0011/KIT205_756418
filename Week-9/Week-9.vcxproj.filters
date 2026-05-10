@@ -34,5 +34,13 @@
     <Text Include="pagerank.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="graph.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="musae_git_edges.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

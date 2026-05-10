@@ -135,7 +135,11 @@
     <ClInclude Include="graph.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="graph.txt" />
     <Text Include="pagerank.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="musae_git_edges.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
