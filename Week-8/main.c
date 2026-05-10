@@ -57,32 +57,32 @@ int main() {
 
     // ---  For MUSAE_GIT_EDGES.CSV  file -------------------------------------
     // 
-  // FILE* file = fopen("musae_git_edges.csv", "r");
-  // if (file == NULL) {
-  //     fprintf(stderr, "Error opening file!\n");
-  //     return 1;
-  // }
-  //
-  // if (fscanf(file, "%d", &G.V) != 1) {
-  //     fprintf(stderr, "Failed to read vertex count\n");
-  //     fclose(file);
-  //     return 1;
-  // }
-  //
-  // G.edges = malloc(G.V * sizeof(EdgeList));
-  // if (G.edges == NULL) {
-  //     fprintf(stderr, "Memory allocation failed\n");
-  //     fclose(file);
-  //     return 1;
-  // }
-  // for (int v = 0; v < G.V; v++) {
-  //     G.edges[v].head = NULL;
-  // }
-  //
-  // int from, to;
-  // while (fscanf(file, "%d,%d", &from, &to) == 2) {
-  //     add_edge(&G, from, to, 0);   // weight hardcoded to 0 (unweighted graph)
-  // }
+   //FILE* file = fopen("musae_git_edges.csv", "r");
+   //if (file == NULL) {
+   //    fprintf(stderr, "Error opening file!\n");
+   //    return 1;
+   //}
+  
+   //if (fscanf(file, "%d", &G.V) != 1) {
+   //    fprintf(stderr, "Failed to read vertex count\n");
+   //    fclose(file);
+   //    return 1;
+   //}
+  
+   //G.edges = malloc(G.V * sizeof(EdgeList));
+   //if (G.edges == NULL) {
+   //    fprintf(stderr, "Memory allocation failed\n");
+   //    fclose(file);
+   //    return 1;
+   //}
+   //for (int v = 0; v < G.V; v++) {
+   //    G.edges[v].head = NULL;
+   //}
+  
+   //int from, to;
+   //while (fscanf(file, "%d,%d", &from, &to) == 2) {
+   //    add_edge(&G, from, to, 0);   // weight hardcoded to 0 (unweighted graph)
+   //}
   // -------------------------------------------------------------------------
 
 
