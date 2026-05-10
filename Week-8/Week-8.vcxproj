@@ -131,9 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="graph.txt" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="musae_git_edges.csv" />
+    <None Include="musae_git_features.json" />
+    <None Include="musae_git_target.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

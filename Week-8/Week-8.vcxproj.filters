@@ -23,10 +23,24 @@
     <Text Include="graph.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="musae_git_edges.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="musae_git_features.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="musae_git_target.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
