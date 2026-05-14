@@ -3,6 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="Week-10/Week-10.vcxproj" Id="ffb6d26a-aa95-4dfd-93de-f69ca012cfab" />
   <Project Path="Week-6/Week-6.vcxproj" Id="0bfd7336-8529-4286-b5db-2a8f75bb571f" />
   <Project Path="Week-7/Week-7.vcxproj" Id="0e555d4e-a433-449e-9a6f-0c9cd15b99fe" />
   <Project Path="Week-8/Week-8.vcxproj" Id="c41c428d-0745-4c5b-b604-d9987c03acf8" />
